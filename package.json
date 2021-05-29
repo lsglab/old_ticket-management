@@ -1,0 +1,86 @@
+{
+  "name": "de.lsgadmins.ticket_management",
+  "displayName": "ticket_management",
+  "version": "0.1.0",
+  "description": "LSG AdminLab ticket management.",
+  "private": true,
+  "keywords": [
+    "ecosystem:cordova",
+    "rollup-plugin"
+  ],
+  "author": "LSGAdmin",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lacrimus/ticket_management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lacrimus/ticket_management/issues"
+  },
+  "homepage": "https://github.com/Lacrimus/ticket_management#readme",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-file": {}
+    },
+    "platforms": [
+      "browser",
+      "electron",
+      "android",
+      "ios"
+    ]
+  },
+  "scripts": {
+    "setup": "cordova platform add android ios electron",
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv www/ --single",
+    "start:dev": "sirv www/ --single --dev",
+    "serve:cordova": "sirv www/ --single --dev --host",
+    "dev-android": "cross-env CORDOVA_PLATFORM=android run-p serve:cordova autobuild cordova-run-android",
+    "bundle-android": "cross-env CORDOVA_PLATFORM=android CORDOVA_PROD=true npm run build",
+    "build-android": "cross-env CORDOVA_PLATFORM=android CORDOVA_PROD=true npm run build-android-subtask",
+    "build-android-subtask": "npm run build && cordova build android",
+    "cordova-run-android": "cordova run android --nobuild",
+    "dev-ios": "cross-env CORDOVA_PLATFORM=ios run-p serve:cordova autobuild cordova-run-ios",
+    "bundle-ios": "cross-env CORDOVA_PLATFORM=ios CORDOVA_PROD=true npm run build",
+    "build-ios": "cross-env CORDOVA_PLATFORM=ios CORDOVA_PROD=true npm run build-ios-subtask",
+    "build-ios-subtask": "npm run build && cordova build ios",
+    "cordova-run-ios": "cordova run ios --nobuild",
+    "dev-electron": "cross-env CORDOVA_PLATFORM=electron run-p serve:cordova autobuild cordova-run-electron",
+    "bundle-electron": "cross-env CORDOVA_PLATFORM=electron CORDOVA_PROD=true npm run build",
+    "build-electron": "cross-env CORDOVA_PLATFORM=electron CORDOVA_PROD=true npm run build-electron-subtask",
+    "build-electron-subtask": "npm run build && cordova build electron",
+    "cordova-run-electron": "cordova run electron --nobuild"
+  },
+  "dependencies": {
+    "@sveltejs/svelte-virtual-list": "^3.0.1",
+    "sirv-cli": "^0.4.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "cordova-android": "^9.0.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-electron": "^1.1.1",
+    "cordova-ios": "^6.1.1",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cross-env": "^5.2.0",
+    "fs-extra": "^8.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.0",
+    "postcss-import": "^14.0.2",
+    "postcss-load-config": "^3.0.1",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-svelte": "^6.1.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.7.3",
+    "tailwindcss": "^2.1.2"
+  }
+}

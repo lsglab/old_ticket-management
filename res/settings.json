@@ -1,0 +1,10 @@
+{
+  "browserWindow": {
+    "width":  1080,
+    "height": 720,
+    "resizeable": true,
+    "webPreferences": {
+      "nodeIntegration": false
+  	}
+  }
+}

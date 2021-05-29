@@ -1,0 +1,10 @@
+node_modules/*
+
+#cordova dependency and build directories
+.DS_Store
+platforms/
+plugins/
+dist/
+www/*
+
+!www/index.html

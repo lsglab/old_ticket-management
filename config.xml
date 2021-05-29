@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="lsgadmins.ticket_management" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ticket_management</name>
+    <description>
+        LSG ticket management app
+    </description>
+    <author email="lacrimus@maxi-dsl.de" href="https://github.com/lsglab/ticket-management">
+        Lacrimus
+    </author>
+    <content src="index.html"/>
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">
+        <preference name="Fullscreen" value="true" />
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <preference name="Fullscreen" value="true" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <platform name="electron">
+        <preference name="ElectronSettingsFilePath" value="res/electron/settings.json" />
+        <icon src="res/electron/icon.png" />
+    </platform>
+    <hook type="before_prepare" src="hooks/beforePrepare.js"/>
+    <hook type="after_run" src="hooks/afterRun.js"/>
+</widget>
