@@ -54,9 +54,7 @@
     "build-electron-subtask": "npm run build && cordova build electron",
     "cordova-run-electron": "cordova run electron --nobuild"
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "@sveltejs/svelte-virtual-list": "^3.0.1",
     "sirv-cli": "^0.4.4",

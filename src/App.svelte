@@ -44,11 +44,33 @@
 	/*!!-DEBUGGING-!!*/
 	let demoticket = {
 		task : "Austausch Whiteboard",
-		room : "4.101"
+		tasklong : "Altes Whiteboard durch neues Modell ersetzen.",
+		goals : [
+			{
+				description : "Anlieferung durch Legamaster",
+				checked : true
+			},
+			{
+				description : "Demontage altes Board",
+				checked : true
+			},
+			{
+				description : "Neues Board anbringen",
+				checked : true
+			},
+			{
+				description : "Altes Board ins Lab zur Wiederververtung",
+				checked : false
+			}
+		],
+		room : "4.101",
+		duedate : "21.6.2022"
 	}
 	let demotickets = new Array({
 		task : "Reperatur Beamer",
-		room : "2.102"
+		tasklong : "EPSON Projektor, Überhitzt ständig, Abmontieren und Entstauben",
+		room : "2.102",
+		duedate : "2.1.2022"
 	}, {
 
 	}, {
@@ -73,7 +95,7 @@
 	<Ticket {...ticket}></Ticket>
 </VirtualList>
 -->
-<div class="m-10">
+<div class="m-4">
 	<Ticket ticket={demoticket}></Ticket>
 </div>
 

@@ -1,5 +1,5 @@
 <script>
-    import { check_outros } from "svelte/internal";
+import HorizontalRule from "./basic/HorizontalRule.svelte";
 
     export let ticket;
 
@@ -13,7 +13,7 @@
         if(!editable) {
             timer = setTimeout(function() {
                  editable = true
-            }, 1500);
+            }, 1200);
         }
     }
 
@@ -25,7 +25,6 @@
 </script>
 
 <style>
-
     .body {
         height: 0;
         overflow: auto;
@@ -35,15 +34,32 @@
     .open {
         height: 50%;
     }
-
 </style>
    
-<div class="bg-gray-100 rounded-sm border-gray-200 shadow">
-    <button on:click={() => open = !open} class="flex w-full border-blue-200 border-b">
-        <span class="pr-1 p-1 text-lg bg-blue-200">{ticket.task}</span>
-        <span class="pr-1 p-1 text-lg bg-blue-200">{ticket.room}</span> 
+<div class="rounded-sm text-sm border border-blue-200 shadow">
+    <button on:click={() => open = !open} class="flex space-x-2 w-full bg-gray-100 focus:outline-none">
+        <span class="p-1">{ticket.task}</span>
+        <span class="flex-grow p-1">{ticket.room}</span> 
+        <span class="p-1">{ticket.duedate}</span> 
     </button>
-    <section on:mousedown={() => holdTimer()} on:mouseup={() => checkTimer()} class:open={open} class="body">
-        
+    <section on:mousedown={() => holdTimer()} on:mouseup={() => checkTimer()} class:open={open} class="body bg-gray-50">
+        <div class="p-1">
+            <div>
+                <span>{ticket.tasklong}</span>
+            </div>
+            <HorizontalRule></HorizontalRule>
+            {#each ticket.goals as goal}
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="form-tick appearance-none border border-blue-400 rounded-md">
+                    <span>{goal.description}</span>
+                </label>
+            {/each}
+            <HorizontalRule></HorizontalRule>
+            {#if editable}
+                <button class="px-2 py-2 border border-blue-400 rounded-md shadow-sm">
+                    <p on:click={() => editable = false}>Stop edit</p>
+                </button>
+            {/if}
+        </div>
     </section>
 </div>
