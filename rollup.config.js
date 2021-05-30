@@ -1,6 +1,5 @@
 import svelte from 'rollup-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
-import css from 'rollup-plugin-css-only'
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
@@ -17,9 +16,6 @@ export default {
 		file: 'www/bundle.js'
 	},
 	plugins: [
-		css({
-			output: 'src/tailwind.css'
-		}),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
@@ -48,7 +44,7 @@ export default {
 		resolve({ browser: true }),
 		commonjs(),
 
-		// Watch the www directory and refresh the
+		// Watch the www/ directory and refresh the
 		// browser on changes when not in production
 		!production && livereload('www/'),
 
@@ -58,5 +54,5 @@ export default {
 	],
 	watch: {
 		clearScreen: false
-	}
+	},
 };

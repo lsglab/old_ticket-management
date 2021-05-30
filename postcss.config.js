@@ -10,7 +10,7 @@ module.exports = {
     plugins: [
       require('postcss-import'),
       require('tailwindcss'), 
-      ...(!production ? [purgecss] : []),
+      ...(production ? [purgecss] : []),
       production ? require('autoprefixer') : null,
     ]
   }
