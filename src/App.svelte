@@ -73,5 +73,7 @@
 	<Ticket {...ticket}></Ticket>
 </VirtualList>
 -->
-<Ticket ticket={demoticket}></Ticket>
+<div class="m-10">
+	<Ticket ticket={demoticket}></Ticket>
+</div>
 
