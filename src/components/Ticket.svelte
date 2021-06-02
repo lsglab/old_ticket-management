@@ -3,7 +3,7 @@ import HorizontalRule from "./basic/HorizontalRule.svelte";
 
     export let ticket;
 
-    let editable = false;
+    export let editable = false;
 
     let open = false;
 
@@ -76,7 +76,7 @@ import HorizontalRule from "./basic/HorizontalRule.svelte";
     <section class:body={!open} class="bg-gray-100">
         <div class="p-1">
             {#if editable}
-                <button class="p-1 w-full border border-blue-400 rounded-md shadow-sm">
+                <button class="p-1 w-full border border-blue-400 rounded-md shadow-sm focus:outline-none">
                     <p on:click={() => editable = false}>Fertig</p>
                 </button>
             {/if}

@@ -1,13 +1,16 @@
 <script>	
+	import { Router, Route } from "svelte-routing";
+
+	import Home from "./routes/home.svelte";
+	import Tickets from "./routes/tickets.svelte";
+	import Archive from "./routes/archive.svelte";
+
 	import Navbar from "./components/Navbar.svelte";
-	import Ticket from "./components/Ticket.svelte";
-	import Alert from "./components/Alert.svelte";
+
+	export let url = "";
 	
 	export let ready = false;
 
-	//Stores the interval of tickets in the VirtualList that are being rendered.
-	let startTicket
-	let endTicket
 	/*
  	* Event listeners for the cordova API or mobile device events
  	*/
@@ -42,6 +45,11 @@
 	});
 
 	/*!!-DEBUGGING-!!*/
+
+	let demouser = {
+		name : "BHG"
+	}
+
 	let demotickets = [
 	{	
 		task : "Austausch Whiteboard",
@@ -91,8 +99,6 @@
 	},
 	];
 
-	let tickets = demotickets;
-
 </script>
 
 
@@ -103,25 +109,14 @@
 
 </style>
 
-<Navbar></Navbar>
+<Router url="{url}">
+	<Navbar></Navbar>
+	<div>
+	  <Route path="/"><Home user={demouser}/></Route>
+	  <Route path="tickets"><Tickets tickets={demotickets}/></Route>
+	  <Route path="archive"><Archive/></Route>
+	</div>
+</Router>
 
 <br>
-
-<div class="m-2">
-	<label class="flex items-center mb-2 border border-gray-300 rounded-md shadow-sm">
-		<button class="inline-flex px-2 bg-gray-200 rounded-l-md focus:outline-none">&#128269</button>
-		<input type="text" class="flex-1 px-1 appearance-none bg-gray-100 rounded-md focus:ring-blue-200 focus:border-blue-400 focus:outline-none" placeholder="Suche">
-	</label>
-	<button class="w-full text-sm border border-blue-400 rounded-md shadow-sm focus:outline-none">
-		<p>+ Neues Ticket</p>
-	</button>
-</div>
-
-{#each tickets as ticket}
-	<div class="m-2">
-		<Ticket ticket={ticket}></Ticket>
-	</div>
-{/each}
-
-<Alert></Alert>
 

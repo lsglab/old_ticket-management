@@ -1,27 +1,5 @@
 <script>
-import { invalid_attribute_name_character } from "svelte/internal";
-
     export let content;
-
-    content = [
-        {
-            text: "Editor aktiv. Alle schließen und Änderungen"
-        }, 
-        {
-            text : "speichern",
-            option : true
-        },
-        {
-            text: "oder"
-        },
-        {
-            text : "verwerfen",
-            option : true
-        },
-        {
-            text: "?"
-        }
-    ];
 </script>
 
 <style>

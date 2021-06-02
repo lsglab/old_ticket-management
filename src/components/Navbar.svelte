@@ -1,18 +1,19 @@
 <script>
+	  import {Link} from "svelte-routing";
 
-  export let segment;
+    export let segment;
 
-  let notify = {
-    home : true,
-    ticket : false,
-    archive : false
-  }
+    let notify = {
+      home : true,
+      ticket : false,
+      archive : false
+    }
 
 </script>
 
 <style>
 
-[aria-current] {
+  [aria-current] {
 		position: relative;
 		display: inline-block;
 	}
@@ -27,7 +28,7 @@
 	}
 
 </style>
-   
+
 <nav class="bg-gray-50 border-blue-200 border-b">
    <div class="max-w-full px-4">
      <div class="relative flex flex-wrap items-center">
@@ -36,7 +37,7 @@
       </div>
         <div class="flex flex-wrap space-x-2">
           <span class="relative inline-flex">
-            <a href="home" class="px-2 text-base leading-6 p-1 text-sm" aria-current="{segment === undefined ? 'page' : undefined}">Home</a>
+            <Link to="/" class="px-2 text-base leading-6 p-1 text-sm" aria-current="{segment === undefined ? 'page' : undefined}">Home</Link>
             {#if notify.home}
             <span class="flex absolute h-2 w-2 top-2 right-0 -mt-1 -mr-1">
               <span class="animate-ping absolute h-full w-full rounded-full bg-blue-600 opacity-50"></span>
@@ -45,7 +46,7 @@
             {/if}
           </span>
           <span class="relative inline-flex">
-            <a href="home" class="px-2 text-base leading-6 p-1 text-sm">Tickets</a>
+            <Link to="tickets" class="px-2 text-base leading-6 p-1 text-sm">Tickets</Link>
             {#if notify.ticket}
             <span class="flex absolute h-2 w-2 top-2 right-0 -mt-1 -mr-1">
               <span class="animate-ping absolute h-full w-full rounded-full bg-blue-600 opacity-50"></span>
@@ -54,7 +55,7 @@
             {/if}
           </span>
           <span class="relative inline-flex">
-            <a href="home" class="px-2 text-base leading-6 p-1 text-sm">Archiv</a>
+            <Link to="archive" class="px-2 text-base leading-6 p-1 text-sm">Archiv</Link>
             {#if notify.archive}
             <span class="flex absolute h-2 w-2 top-2 right-0 -mt-1 -mr-1">
               <span class="animate-ping absolute h-full w-full rounded-full bg-blue-600 opacity-50"></span>
