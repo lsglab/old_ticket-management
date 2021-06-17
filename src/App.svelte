@@ -1,4 +1,5 @@
-<script>	
+<script>
+	
 	import { Router, Route } from "svelte-routing";
 
 	import Home from "./routes/home.svelte";
@@ -74,10 +75,10 @@
 		],
 		author : "BHG",
 		room : "4.101",
-		duedate : "21.6.2022"
+		duedate : "21.06.2022"
 	},	
 	{
-		task : "Reperatur Beamer",
+		task : "Reparatur Beamer",
 		tasklong : "EPSON Projektor, Überhitzt ständig, Abmontieren und Entstauben",
 		goals: [
 			{
@@ -95,7 +96,7 @@
 		],
 		author: "STO",
 		room : "2.102",
-		duedate : "2.1.2022"
+		duedate : "02.01.2022"
 	},
 	];
 
