@@ -43,7 +43,7 @@
 	// error handeling
 	window.addEventListener("cordovacallbackerror", function (event) {
     	alert("Cordova callback error: " + event.error);
-	});
+	}); 
 
 	/*!!-DEBUGGING-!!*/
 
