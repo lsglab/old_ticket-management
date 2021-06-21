@@ -33,6 +33,9 @@
 </style>
    
 <div class="flex flex-col space-y-2 m-2">
+	<div class="text-center">
+		<h1 class="inline-block text-xl">Tickets</h1>
+	</div>
 	<label class="flex items-centerborder border border-gray-300 rounded-md shadow-sm">
 		<button class="inline-flex px-2 bg-gray-200 rounded-l-md focus:outline-none">&#128269</button>
 		<input type="text" class="flex-1 px-1 appearance-none bg-gray-100 rounded-r-md focus:ring-blue-200 focus:border-blue-400 focus:outline-none" placeholder="Suche">

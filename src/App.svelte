@@ -115,7 +115,7 @@
 	<div>
 	  <Route path="/"><Home user={demouser}/></Route>
 	  <Route path="tickets"><Tickets tickets={demotickets}/></Route>
-	  <Route path="archive"><Archive/></Route>
+	  <Route path="archive"><Archive tickets={demotickets} /></Route>
 	</div>
 </Router>
 
