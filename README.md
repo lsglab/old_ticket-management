@@ -7,7 +7,7 @@ Also, [svelte](https://svelte.dev/) is used as an UI framework.
 
 ### Frontend
 + svelte UI framework
-+ tailwind CSS stylesheet
++ tailwind CSS
 + open iconic icon set
 
 ### Framework / Wrapper
