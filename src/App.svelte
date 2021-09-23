@@ -2,10 +2,17 @@
 	import { Router, Route } from "svelte-routing";
 
 	import Home from "./routes/home.svelte";
-	import Tickets from "./routes/tickets.svelte";
+	//import Tickets from "./routes/tickets.svelte";
+	import Inbox from "./routes/inbox.svelte";
+	import InProcess from "./routes/inprocess.svelte";
+	import Done from "./routes/done.svelte";
 	import Archive from "./routes/archive.svelte";
+	import Trash from "./routes/trash.svelte";
+	
+	import Sidenav from "./components/molecules/Sidenav.svelte"
+	import Header from "./components/organisims/Header.svelte"
 
-	import Navbar from "./components/Navbar.svelte";
+	import config from "./config";
 
 	let tickets;
 
@@ -14,6 +21,8 @@
 	let deviceready
 
 	let url = "";
+	
+	let width;
 
 	const APP_USER = "BHG";
 
@@ -52,6 +61,8 @@
 
 </script>
 
+<svelte:window bind:outerWidth={width}/>
+
 <style global lang="postcss">
 	@tailwind base;
 	@tailwind components;
@@ -60,10 +71,17 @@
 
 
 <Router url="{url}">
-	<Navbar></Navbar>
+	<Header/>
+	{#if width < 400}
+		<Sidenav/>
+	{/if}
 	<div>
 	  <Route path="/"><Home user={APP_USER}/></Route>
-	  <Route path="tickets"><Tickets bind:this={tickets}/></Route>
+	  <!--<Route path="tickets"><Tickets bind:this={tickets}/></Route>-->
+	  <Route path="inbox"><Inbox/></Route>
+	  <Route path="inprocess"><InProcess/></Route>
+	  <Route path="done"><Done/></Route>
 	  <Route path="archive"><Archive bind:this={archive}/></Route>
+	  <Route path="trash"><Trash/></Route>
 	</div>
 </Router>

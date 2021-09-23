@@ -85,7 +85,7 @@
 		duedate: "02.01.2022"
 	},
 	];
-
+	/*
     database.users.bulkPut(demousersIn).then(function() {
         console.log("Done putting users");
     }).catch(Dexie.BulkError, function (e) {
@@ -97,7 +97,7 @@
     }).catch(Dexie.BulkError, function (e) {
         console.error ("(Partial) error at putting tickets")
     });
-
+	*/
     /*DEBUGGING END*/
 
 </script>
