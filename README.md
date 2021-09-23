@@ -14,7 +14,8 @@ Also, [svelte](https://svelte.dev/) is used as an UI framework.
 + Apache Cordova as a cross platform environment using web technologies
 
 ### Backend
-...
+[Dedicated backend repository](https://github.com/lsglab/ticket-management-backend)
+
 ### Development
 + git for version control
 + package management + build scrips via npm
