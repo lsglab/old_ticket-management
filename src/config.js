@@ -5,27 +5,27 @@ const config = {
     navtabs : [
         {
           to : "/",
-          title : "Home"
+          title : "Übersicht"
         },
         {
-          to : "/inbox",
+          to : "/new",
           title : "Neu"
         },
         {
           to : "/inprocess",
-          title : "Todo"
+          title : "Zutun"
         },
         {
           to : "/done",
-          title : "Fertig"
+          title : "Ablage"
         },     
         {
           to : "/archive",
           title : "Archiv"
         },      
         {
-          to : "/trash",
-          title : "Müll"
+          to : "/settings",
+          title : "Einstellungen"
         },
       ]
 }

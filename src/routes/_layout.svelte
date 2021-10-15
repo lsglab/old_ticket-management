@@ -5,7 +5,7 @@
 <style lang="postcss">
 
     .tm-container {
-        @apply container m-2 p-3 border rounded-md bg-gray-50
+        @apply container p-2 bg-white shadow-md rounded-md;
     }
 
     .tm-section {

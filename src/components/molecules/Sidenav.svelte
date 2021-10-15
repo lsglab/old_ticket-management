@@ -14,7 +14,7 @@
 
 <div class="{$sidenav.open ? '' : 'hidden'}">
     <!--<div class="absolute inset-0 bg-gray-800 bg-opacity-20 transition-opacity {$sidenav.open ? 'bg-opacity-20' : 'bg-opacity-0'}"></div>-->
-    <div class="flex fixed z-1 right-0 rounded-l-md shadow-md transition-width {$sidenav.open ? '' : 'w-0'}">
+    <div class="flex fixed z-10 right-0 rounded-l-md shadow-md {$sidenav.open ? '' : 'w-0'}">
         <div class="flex flex-col h-full py-2 bg-white">
           {#each tabs as tab}
             <NavTab {...tab}/>

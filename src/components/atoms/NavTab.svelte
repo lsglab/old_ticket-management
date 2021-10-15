@@ -22,15 +22,19 @@
     
     @keyframes pulse {
         from {
-            @apply bg-blue-300; @apply opacity-10;
+            --tw-bg-opacity: 0.1;
+            background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
         }
         to {
-            @apply bg-blue-300; @apply opacity-40;
+            --tw-bg-opacity: 0.4;
+            background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
         }
     }
 </style>
 
 <div class="relative inline-flex">
-    <div class="{notified ? 'animate:' : ''} absolute inline-flex h-full w-full"></div>
-    <Link on:click={() => {sidenav.close()}} {to} class="px-2 text-base leading-6 p-1 text-sm">{title}</Link>
+    {#if notified}
+        <div class="animate absolute inline-flex h-full w-full"></div>
+    {/if}
+    <Link on:click={() => {sidenav.close()}} {to} class="px-2 w-full text-base leading-6 p-1 text-md">{title}</Link>
 </div>

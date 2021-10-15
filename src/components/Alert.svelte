@@ -11,7 +11,7 @@
 
 </style>
    
-<nav class="fixed bottom-0 w-full bg-blue-100 border-blue-400 border-t">
+<div class="fixed bottom-0 w-full bg-blue-100 border-blue-400 border-t">
     <div class="p-1">
         {#each content as item}
         {#if item.option}
@@ -23,4 +23,4 @@
         {/if}
         {/each}
     </div>
- </nav>
+</div>

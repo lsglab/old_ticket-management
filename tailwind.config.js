@@ -25,7 +25,7 @@ module.exports = {
             sky1 : "#7D9EC7",
             sky2 : "#8DAAD2",
             turquoise : "#1E6577",
-        },
+        }
 		},
 		fontWeight: {
 			normal: 300,
